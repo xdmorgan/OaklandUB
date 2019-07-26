@@ -45,7 +45,10 @@
         },
         path: 'UB_loader.json'
     };
-    var anim;
+
+    anim = bodymovin.loadAnimation(animData);
+
+        var anim;
     var elem = document.getElementById('bodymovin')
     var animData = {
         container: elem,
@@ -57,8 +60,8 @@
         },
         path: 'UB_loader.json'
     };
-    anim = bodymovin.loadAnimation(animData);
 
+    anim = bodymovin.loadAnimation(animData);
 </script>
   
 </body>
