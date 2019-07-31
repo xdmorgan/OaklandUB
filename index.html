@@ -10,8 +10,18 @@
             overflow-y: auto;
         }
 
-        #bodymovin{
+        #ghost{
             background-color:#292A3C;
+            widows:100%;
+            height:600px;
+            display:block;
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            margin: auto;
+        }
+        
+        #loader{
+            background-color:white;
             widows:100%;
             height:600px;
             display:block;
@@ -29,14 +39,13 @@
     <script src="bodymovin.js"></script>
 </head>
 <body>
-<div id="bodymovin"></div>
+<div id="ghost"></div>
+<div id="loader"></div>
 
 <script>
-
-    var anim;
-    var elem = document.getElementById('bodymovin')
-    var animData = {
-        container: elem,
+    var ghostElement = document.getElementById('ghost')
+    var ghostData = {
+        container: ghostElement,
         renderer: 'svg',
         loop: true,
         autoplay: true,
@@ -45,7 +54,20 @@
         },
         path: 'https://tdarragh.github.io/OaklandUB/UB_loader.json'
     };
-    anim = bodymovin.loadAnimation(animData);
+    var ghostAnim = bodymovin.loadAnimation(ghostData);
+    
+    var loaderElement = document.getElementById('loader')
+    var loaderData = {
+        container: loaderElement,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            progressiveLoad:false
+        },
+        path: 'https://tdarragh.github.io/OaklandUB/UB_Load04.json'
+    };
+    var loaderAnim = bodymovin.loadAnimation(loaderData);
  
 
 </script>
